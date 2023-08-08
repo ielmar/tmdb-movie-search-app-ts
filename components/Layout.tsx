@@ -20,7 +20,7 @@ const BgGradient = styled.div`
 const Layout: React.FC<Props> = ({ children }) => {
   return (
     <OuterMain className="bg-white">
-      <InnerDiv className="relative isolate px-6 pt-14 lg:px-8 max-h-screen">
+      <InnerDiv className="relative isolate px-6 pt-14 lg:px-8">
         <TopBgParent
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
           aria-hidden="true"

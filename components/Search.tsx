@@ -11,12 +11,16 @@ const sampleMovieNames = [
   "The Devil's Advocate",
 ];
 
-const Search = () => {
-  const [searchTerm, setSearchTerm] = useState<string>('');
-
+const Search = ({
+  setSearchTerm,
+  searchTerm,
+}: {
+  setSearchTerm: (searchTerm: string) => void;
+  searchTerm: string;
+}) => {
   return (
-    <div className="sm:mb-8 sm:flex sm:justify-center flex-col">
-      <div className="flex mb-5 justify-center">
+    <div className="sm:mb-8 flex justify-center flex-col px-40">
+      <div className="flex mb-28 justify-center">
         <FilmIcon className="h-16 w-16 text-gray-900 mr-5" />
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
           #1 Movie Search Engine
@@ -26,6 +30,7 @@ const Search = () => {
         <input
           type="text"
           placeholder={searchTerm || 'Type the movie you want to find...'}
+          onChange={(e) => setSearchTerm(e.target.value)}
           className="rounded px-5 py-5 text-4xl w-full border outline-none placeholder-gray-400 text-gray-900 focus:ring-1 focus:ring-offset-1 focus:ring-gray-900/20 focus:ring-offset-gray-900/10"
         />
       </div>

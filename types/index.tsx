@@ -7,3 +7,7 @@ export interface Movie {
 }
 
 export type Movies = Movie[];
+
+export interface Error {
+  message: string;
+}

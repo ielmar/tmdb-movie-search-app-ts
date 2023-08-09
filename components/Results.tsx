@@ -17,7 +17,7 @@ const movies = [
     overview: 'Insulated bottle with white base and black snap lid.',
   },
   {
-    id: 1,
+    id: 2,
     title: 'Nomad Tumbler',
     color: 'White',
     year: 2023,
@@ -26,7 +26,7 @@ const movies = [
     overview: 'Insulated bottle with white base and black snap lid.',
   },
   {
-    id: 1,
+    id: 3,
     title: 'Nomad Tumbler',
     color: 'White',
     year: 1998,
@@ -35,7 +35,7 @@ const movies = [
     overview: 'Insulated bottle with white base and black snap lid.',
   },
   {
-    id: 1,
+    id: 4,
     title: 'Nomad Tumbler',
     color: 'White',
     year: 1999,
@@ -44,7 +44,7 @@ const movies = [
     overview: 'Insulated bottle with white base and black snap lid.',
   },
   {
-    id: 1,
+    id: 5,
     title: 'Nomad Tumbler',
     color: 'White',
     year: 2001,

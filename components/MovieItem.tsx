@@ -18,7 +18,7 @@ const MovieItem = ({ movie }: { movie: Movie }) => {
       <div className="mt-4 flex justify-between">
         <div>
           <h3 className="text-sm text-gray-700">
-            <a href={movie.title}>
+            <a href={movie.title} title={movie.title}>
               <span aria-hidden="true" className="absolute inset-0" />
               {movie.title}
             </a>

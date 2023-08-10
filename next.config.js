@@ -5,7 +5,7 @@ const nextConfig = {
     styledComponents: true,
   },
   images: {
-    domains: ['images.unsplash.com', 'tailwindui.com', 'cdn.sanity.io'],
+    domains: ['image.tmdb.org', 'tailwindui.com', 'cdn.sanity.io'],
   },
 };
 

@@ -1,17 +1,40 @@
-import { movies } from '../database/models';
-import { Movie, Movies } from '../types';
+import { Op } from 'sequelize';
 
-export async function create_movie({ title, image, year, overview }: Movie) {
-  const users = await movies.create({
+import { Movie } from '@/db/models/Movie';
+
+export async function createMovie({
+  title,
+  year,
+  image,
+  overview,
+}: {
+  title: string;
+  year: number;
+  image: string;
+  overview: string;
+}) {
+  const movie = new Movie({
     title,
     year,
     image,
     overview,
   });
-  return users.dataValues;
+  await movie.save();
+  return movie.dataValues;
 }
 
-export async function fetch_movies() {
-  const moviesResult: Movies = await movies.findAll();
+export async function fetchMovies(search?: string) {
+  const moviesResult: Movie[] = await Movie.findAll({
+    where: {
+      title: {
+        [Op.like]: `%${search}%`,
+      },
+    },
+  });
   return moviesResult;
+}
+
+export async function fetchMovieById(id: number) {
+  const movieResult: Movie | null = await Movie.findByPk(id);
+  return movieResult;
 }

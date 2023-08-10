@@ -29,39 +29,17 @@ const handler = async (
       case 'GET': {
         const { query } = req;
         const { search, id } = query;
-        // if (id) {
-        //   console.log('id', id);
-        //   const movie: Movie | null = await fetchMovieById(Number(id));
-        //   if (!movie) {
-        //     const searchResultsFromRemoteAPI = await fetch(
-        //       `https://api.themoviedb.org/3/search/movie?query=titanic&include_adult=false&language=en-US&page=1`,
-        //       options
-        //     );
-        //     console.log(searchResultsFromRemoteAPI);
-        //     // .then((response) => response.json())
-        //     // .then((response) => console.log(response))
-        //     // .catch((err) => console.error(err));
-        //     if (searchResultsFromRemoteAPI.status === 200) {
-        //       const searchResults = await searchResultsFromRemoteAPI.json();
-        //       console.log(searchResults);
-        //       res.status(200).json(searchResults);
-        //     } else {
-        //       res.status(500).json({
-        //         message: 'Something went wrong',
-        //       });
-        //     }
-        //     break;
-        //   }
-        //   res.status(200).json(movie);
-        //   break;
-        // }
+        if (id) {
+          const movie: Movie | null = await fetchMovieById(Number(id));
+          res.status(200).json(movie);
+          break;
+        }
         const all_movies = await fetchMovies(search as string);
         if (all_movies.length === 0) {
           const searchResultsFromRemoteAPI = await fetch(
             `${process.env.TMDB_API_URL}search/movie?query=${search}&include_adult=false&language=en-US&page=1`,
             options
           );
-          console.log(searchResultsFromRemoteAPI);
           if (searchResultsFromRemoteAPI.status === 200) {
             const searchResults = await searchResultsFromRemoteAPI.json();
             searchResults.results.forEach(async (movie: any) => {
@@ -83,7 +61,6 @@ const handler = async (
                 overview: movie.overview,
               };
             });
-            console.log(movies);
             res.status(200).json(movies);
           } else {
             res.status(500).json({

@@ -19,6 +19,7 @@ const handler = async (
 ) => {
   try {
     const { method } = req;
+    await sequelize.sync();
     switch (method) {
       case 'POST': {
         const created_user = await createMovie(req.body);
@@ -28,7 +29,6 @@ const handler = async (
       case 'GET': {
         const { query } = req;
         const { search, id } = query;
-        await sequelize.sync({ force: true });
         // if (id) {
         //   console.log('id', id);
         //   const movie: Movie | null = await fetchMovieById(Number(id));
@@ -66,6 +66,7 @@ const handler = async (
             const searchResults = await searchResultsFromRemoteAPI.json();
             searchResults.results.forEach(async (movie: any) => {
               const movieObj = {
+                id: movie.id,
                 title: movie.title,
                 year: movie.release_date.split('-')[0],
                 image: `${process.env.TMDB_IMAGE_URL}w500${movie.poster_path}`,

@@ -17,8 +17,6 @@ First, run the development server:
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
 Add a file named `.env.local` in the root folder of the project on your desired environment. Then add below keys:
 
 ```
@@ -27,6 +25,10 @@ TMDB_API_KEY=
 TMDB_API_URL=https://api.themoviedb.org/3/
 TMDB_IMAGE_URL=https://image.tmdb.org/t/p/
 ```
+
+To get Access Token, register on [TMDB website](https://developer.themoviedb.org/docs)
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Contact
 

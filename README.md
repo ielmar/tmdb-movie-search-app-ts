@@ -11,10 +11,10 @@ This is a [TMDB](https://themoviedb.org) Movie Search app made with [Next.js](ht
 
 ## Getting Started
 
-First, run the development server:
+First, install the required packages:
 
 ```bash
-yarn dev
+yarn i
 ```
 
 Add a file named `.env.local` in the root folder of the project on your desired environment. Then add below keys:
@@ -27,6 +27,12 @@ TMDB_IMAGE_URL=https://image.tmdb.org/t/p/
 ```
 
 To get Access Token, register on [TMDB website](https://developer.themoviedb.org/docs)
+
+Run the development server:
+
+```
+yarn dev
+```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

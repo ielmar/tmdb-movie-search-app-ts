@@ -40,6 +40,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 Elmar Ismayilov - [Twitter](https://twitter.com/i_elmar) - [LinkedIn](https://www.linkedin.com/in/elmar-ismayilov-5b125318/)
 
-Project Link: [https://github.com/ielmar/nodejs-puppeteer-data-scraper](https://github.com/ielmar/nodejs-puppeteer-data-scraper)
+Project Link: [https://github.com/ielmar/tmdb-movie-search-app-ts](https://github.com/ielmar/tmdb-movie-search-app-ts)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
